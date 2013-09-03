@@ -93,7 +93,7 @@ matchCommentSigns string = [[x, (matchCommentSigns' alpha omega x lengthx) + 1] 
 matchCommentSigns' :: [Int] -> [Int] -> Int -> Int -> Int
 matchCommentSigns' alpha omega index lengthx = matchCommentSigns'' newAlpha newOmega 0 lengthx
 	where
-		newAlpha = [x | x<-alpha, x > index]
+		newAlpha = [x | x\<-alpha, x > index]
 		newOmega = [x | x<-omega, x > index]
 	
 matchCommentSigns'' :: [Int] -> [Int] -> Int -> Int -> Int

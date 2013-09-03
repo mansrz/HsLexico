@@ -1,0 +1,82 @@
+#include,Identificador
+<stdio.h>,Identificador
+#define,Identificador
+MAX=50,Identificador
+struct,Palabra Reservada
+Dato,Identificador
+{,Llave Abierta
+int,Palabra Reservada
+valor,Identificador
+;,Punto y coma
+},Llave Cerrada
+;,Punto y coma
+void,Palabra Reservada
+main,Identificador
+(,Parentesis Abierto
+),Parentesis Cerrado
+{,Llave Abierta
+int,Palabra Reservada
+a,Identificador
+,,Coma
+b,Identificador
+=,Asignacion
+0,Identificador
+;,Punto y coma
+char,Palabra Reservada
+*cadena,Identificador
+;,Punto y coma
+int,Palabra Reservada
+vector[9],Identificador
+;,Punto y coma
+for,Palabra Reservada
+(,Parentesis Abierto
+a,Identificador
+=,Asignacion
+0,Identificador
+;,Punto y coma
+a,Identificador
+<,Menor
+5,Identificador
+;,Punto y coma
+a,Identificador
+++,Decremento
+),Parentesis Cerrado
+{,Llave Abierta
+b,Identificador
+++,Decremento
+;,Punto y coma
+},Llave Cerrada
+while,Palabra Reservada
+(,Parentesis Abierto
+b,Identificador
+>,Mayor
+0,Identificador
+),Parentesis Cerrado
+{,Llave Abierta
+b,Identificador
+--,Decremento
+;,Punto y coma
+},Llave Cerrada
+switch,Palabra Reservada
+(,Parentesis Abierto
+a,Identificador
+),Parentesis Cerrado
+{,Llave Abierta
+case,Palabra Reservada
+0,Identificador
+:,Identificador
+b,Identificador
+++,Decremento
+;,Punto y coma
+break,Palabra Reservada
+;,Punto y coma
+case,Palabra Reservada
+1,Identificador
+:,Identificador
+b,Identificador
+--,Decremento
+;,Punto y coma
+break,Palabra Reservada
+;,Punto y coma
+},Llave Cerrada
+},Llave Cerrada
