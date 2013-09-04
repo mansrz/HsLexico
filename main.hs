@@ -29,6 +29,7 @@ escribir (x:xs) (c)
 	| (x =="{")==True=do{appendFile "tok.txt" (x++",Llave Abierta\n");escribir (xs) c}
 	| (x =="}")==True=do{appendFile "tok.txt" (x++",Llave Cerrada\n");escribir (xs) c}
 	| (x ==";")==True=do{appendFile "tok.txt" (x++",Punto y coma\n");escribir (xs) c}
+	| (x ==":")==True=do{appendFile "tok.txt" (x++",Punto y coma\n");escribir (xs) c}
 	| (x ==",")==True=do{appendFile "tok.txt" (x++",Coma\n");escribir (xs) c}
 	| (x ==">")==True=do{appendFile "tok.txt" (x++",Mayor\n");escribir (xs) c}
 	| (x =="<")==True=do{appendFile "tok.txt" (x++",Menor\n");escribir (xs) c}
@@ -38,6 +39,11 @@ escribir (x:xs) (c)
 	| (x =="==")==True=do{appendFile "tok.txt" (x++",Equivalencia\n");escribir (xs) c}
 	| (x =="--")==True=do{appendFile "tok.txt" (x++",Disminucion Uitaria\n");escribir (xs) c}
 	| (x =="++")==True=do{appendFile "tok.txt" (x++",Aumento Unitario\n");escribir (xs) c}
+	| (x =="+")==True=do{appendFile "tok.txt" (x++",Suma\n");escribir (xs) c}
+	| (x =="-")==True=do{appendFile "tok.txt" (x++",Resta\n");escribir (xs) c}
+	| (x =="*")==True=do{appendFile "tok.txt" (x++",Multiplicacion\n");escribir (xs) c}
+	| (head x =='*')==True=do{appendFile "tok.txt" ("*,Puntero\n");escribir ((tail x):xs) c}
+	| (head x =='#')==True=do{appendFile "tok.txt" ("#,Numeral\n");escribir ((tail x):xs) c}
 	| otherwise = do{appendFile "tok.txt" (x++",Identificador\n");escribir (xs) c}
 
 isSubstringContainedInString :: String -> String -> Bool
