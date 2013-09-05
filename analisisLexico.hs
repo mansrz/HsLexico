@@ -48,7 +48,16 @@ escribir (x:xs) (c)
 	| (head x =='#')==True=do{appendFile "tok.txt" ("#,Numeral\n");escribir ((tail x):xs) c}
 	| (head x =='(')==True=do{appendFile "tok.txt" ("(,Parentesis Abierto\n");escribir ((tail x):xs) c}
 	| ((last x ==')') || (last x =='{') || (last x =='}') || (last x ==';') ||(last x ==':'))==True=do{escribir ((init x):[(last x)]:xs) c}
+	| (head x =='"')==True=do{appendFile "tok.txt" (x++" "); cadena (xs) c}
 	| otherwise = do{appendFile "tok.txt" (x++",Identificador\n");escribir (xs) c}
+
+
+cadena [] c = putStr "El analisis lexico a finalizado.\n"
+cadena (x:xs) (c)
+	| (last x =='"' )==True=do{appendFile "tok.txt" (x++",Cadena\n"); escribir (xs) c}
+	| (last (init x) =='"' )==True=do{appendFile "tok.txt" ((init x)++",Cadena\n"); escribir ([(last x)]:xs) c}
+	| otherwise = do{appendFile "tok.txt" (x++" "); cadena (xs) c}
+
 
 isSubstringContainedInString :: String -> String -> Bool
 isSubstringContainedInString substring string = isInfixOf substring string

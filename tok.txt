@@ -1,7 +1,11 @@
-#include,Identificador
+#,Numeral
+include,Palabra Reservada
 <stdio.h>,Identificador
-#define,Identificador
-MAX=50,Identificador
+#,Numeral
+define,Identificador
+MAX,Identificador
+=,Asignacion
+50,Identificador
 struct,Palabra Reservada
 Dato,Identificador
 {,Llave Abierta
@@ -23,7 +27,10 @@ b,Identificador
 0,Identificador
 ;,Punto y coma
 char,Palabra Reservada
-*cadena,Identificador
+*,Puntero
+cadena,Identificador
+=,Asignacion
+"asd asda",Cadena
 ;,Punto y coma
 int,Palabra Reservada
 vector[9],Identificador
@@ -39,11 +46,11 @@ a,Identificador
 5,Identificador
 ;,Punto y coma
 a,Identificador
-++,Decremento
+++,Aumento Unitario
 ),Parentesis Cerrado
 {,Llave Abierta
 b,Identificador
-++,Decremento
+++,Aumento Unitario
 ;,Punto y coma
 },Llave Cerrada
 while,Palabra Reservada
@@ -54,7 +61,7 @@ b,Identificador
 ),Parentesis Cerrado
 {,Llave Abierta
 b,Identificador
---,Decremento
+--,Disminucion Uitaria
 ;,Punto y coma
 },Llave Cerrada
 switch,Palabra Reservada
@@ -64,17 +71,17 @@ a,Identificador
 {,Llave Abierta
 case,Palabra Reservada
 0,Identificador
-:,Identificador
+:,Punto y coma
 b,Identificador
-++,Decremento
+++,Aumento Unitario
 ;,Punto y coma
 break,Palabra Reservada
 ;,Punto y coma
 case,Palabra Reservada
 1,Identificador
-:,Identificador
+:,Punto y coma
 b,Identificador
---,Decremento
+--,Disminucion Uitaria
 ;,Punto y coma
 break,Palabra Reservada
 ;,Punto y coma

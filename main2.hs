@@ -39,6 +39,8 @@ escribir (x:xs) (c)
 	| (x =="<=")==True=do{appendFile "tok.txt" (x++",Menor Igual\n");escribir (xs) c}
 	| (x =="=")==True=do{appendFile "tok.txt" (x++",Asignacion\n");escribir (xs) c}
 	| (x =="==")==True=do{appendFile "tok.txt" (x++",Equivalencia\n");escribir (xs) c}
+	| (x =="&&")==True=do{appendFile "tok.txt" (x++",Y\n");escribir (xs) c}
+	| (x =="||")==True=do{appendFile "tok.txt" (x++",O\n");escribir (xs) c}
 	| (x =="--")==True=do{appendFile "tok.txt" (x++",Disminucion Uitaria\n");escribir (xs) c}
 	| (x =="++")==True=do{appendFile "tok.txt" (x++",Aumento Unitario\n");escribir (xs) c}
 	| (x =="+")==True=do{appendFile "tok.txt" (x++",Suma\n");escribir (xs) c}
@@ -48,7 +50,14 @@ escribir (x:xs) (c)
 	| (head x =='#')==True=do{appendFile "tok.txt" ("#,Numeral\n");escribir ((tail x):xs) c}
 	| (head x =='(')==True=do{appendFile "tok.txt" ("(,Parentesis Abierto\n");escribir ((tail x):xs) c}
 	| ((last x ==')') || (last x =='{') || (last x =='}') || (last x ==';') ||(last x ==':'))==True=do{escribir ((init x):[(last x)]:xs) c}
+--	| (head x =='"')==True=do{appendFile "tok.txt" (x++" ");cadena ((xs) c)}
 	| otherwise = do{appendFile "tok.txt" (x++",Identificador\n");escribir (xs) c}
+
+--cadena [] c= "El analisis lexico a finalizado.\n"
+--cadena (x:xs) c
+--	| (last x =='"')==True=do{appendFile "tok.txt" (x++",Cadena\n");escribir (xs c)}
+--	| otherwise = do{appendFile "tok.txt" (x++" "); cadena (xs c)}
+
 
 isSubstringContainedInString :: String -> String -> Bool
 isSubstringContainedInString substring string = isInfixOf substring string
@@ -201,3 +210,5 @@ replaceSlashCommentInStringInIndexes' string index indexes
 	| (numberExistsInList index indexes) == True = '@'
 	| (numberExistsInList (index - 1) indexes) == True = '@'
 	| (numberExistsInList index indexes) == False = (string !! index)
+
+find
